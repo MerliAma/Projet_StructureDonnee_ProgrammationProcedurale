@@ -1,7 +1,8 @@
-Procédure dot_product(v1, v2, m, ps)
+Fonction dot_product(v1, v2, m) : réel
 
 Variables
     i : entier
+    ps : réel
 
 Début
     ps ← 0
@@ -9,9 +10,11 @@ Début
     Pour i ← 1 à m Faire
         ps ← ps + v1[i] * v2[i]
     FinPour
+
+    Retourner ps
 Fin
 
-Algorithme Orthogonalite_Procedure
+Algorithme Orthogonalite_Fonction
 
 Variables
     n, m, i, j : entier
@@ -20,11 +23,11 @@ Variables
 
 Début
 
-    Lire(n)     // nombre de couples de vecteurs
+    Lire(n)
 
     Pour i ← 1 à n Faire
 
-        Lire(m) // dimension des vecteurs
+        Lire(m)
 
         Pour j ← 1 à m Faire
             Lire(v1[j])
@@ -34,7 +37,7 @@ Début
             Lire(v2[j])
         FinPour
 
-        Appeler dot_product(v1, v2, m, ps)
+        ps ← dot_product(v1, v2, m)
 
         Si ps = 0 Alors
             Ecrire("Les vecteurs sont orthogonaux")
